@@ -170,7 +170,7 @@ pointer-events: none;
   font-weight: 300;
 }
 .biodata{
-  background-image: url('/img/bg.jpg');
+  background-image: url('../img/bg.jpg');
   height: auto;
   background-repeat: no-repeat;
   background-size: cover;
@@ -594,7 +594,7 @@ padding-top: 3rem;
   margin: 20px auto;
 }
 #akhir .container {
-  background-image: url('/img/bghero3.jpeg');
+  background-image: url('../img/bghero3.jpeg');
 background-repeat: no-repeat;
 background-size: cover;
   height: auto;
