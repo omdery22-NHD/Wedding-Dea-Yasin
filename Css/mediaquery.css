@@ -1,0 +1,788 @@
+@media (min-width:992px) {
+  .cover {
+    background-size: 100% 100%;
+  }
+ .cover h4{
+   font-size: 5rem;
+ }
+  .cover h1{
+   font-size: 8rem;
+ }
+   .cover p{
+   font-size: 2.5rem;
+ }
+    .cover button{
+   font-size: 2.5rem;
+ }
+  .hero {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 100vh;
+  }
+.hero2 {
+  max-width: 100vh;
+  height: auto;
+}
+  .col-4 .kiri {
+    width: 550px;
+    height: 300px;
+  }
+    .col-4 .kanan {
+    width: 550px;
+    height: 300px;
+  }
+  .col-4 h1 {
+    font-size: 5rem;
+  }
+  .img1 {
+    height: 400px;
+    width: 300px;
+    top: -100px;
+    position: relative;
+    
+  }
+  .hero2 .nama {
+    font-size: 5rem;
+    top: -80px;
+    position: relative;
+  }
+  .hero2 p {
+    font-size: 1.8rem;
+top: -85px;
+position: relative;
+  }
+
+  .biodata {
+    height: auto;
+    max-width: 100%;
+    padding-bottom: 100px;
+  }
+  .bismillah img{
+    width: 600px;
+  }
+  .biodata1 h3 {
+    font-size: 5rem;
+  }
+  .biodata2 {
+    position: relative;
+  }
+  .biodata2 p {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 300;
+    
+  }
+
+  .biodata4 h3,
+  .biodata8 h3 {
+    font-size: 4rem;
+  }
+    .biodata4 p,
+  .biodata8 p {
+    font-size: 1.8rem;
+  }
+  .biodata7 img,
+  .biodata5 img{
+    width: 230px;
+    height: 280px;
+  }
+.biodata7,
+.biodata8 {
+  padding-top: 20px;
+}
+
+    .info .card-body {
+  font-size: 1rem;
+}
+.bunga2 {
+  top: 290px;
+}
+.bunga1 {
+  top: 290px;
+}
+.info {
+  height: auto;
+  max-width: 100%;
+}
+.info h2 {
+ font-size: 5rem; 
+}
+.info p{
+  font-size: 1.8rem;
+}
+.maps a {
+  font-size: 1.2rem;
+}
+.bunga1 {
+  top: 400px;
+}
+.bunga2 {
+  top: 400px;
+}
+.story {
+  height: auto;
+  max-width: 100%;
+}
+.story h2 {
+  font-size: 5rem;
+}
+.story p {
+  font-size: 1.8rem;
+}
+.timeline {
+  list-style: none;
+  padding: 1.4rem 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  width: 1px;
+  background-color: #ccc;
+  left: 50%;
+}
+
+.timeline li {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.timeline li::before,
+.timeline li::after {
+  content: '';
+  display: table;
+}
+
+.timeline li::after {
+  clear: both;
+}
+
+.timeline li .timeline-image {
+  width: 120px;
+  height: 120px;
+  background-color: #ccc;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 3px solid #ff6b94;
+}
+
+.timeline li .timeline-panel {
+  width: 35%;
+  float: left;
+  border: 1px solid #ccc;
+  padding: 2rem;
+  position: relative;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.timeline li .timeline-panel::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  border-top: 15px solid transparent;
+  border-left: 15px solid #ccc;
+  border-right: 0 solid #ccc;
+  border-bottom: 15px solid transparent;
+  top: 60px;
+  right: -15px;
+}
+
+.timeline li .timeline-panel::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 14px solid #fff;
+  border-right: 0 solid #fff;
+  border-bottom: 14px solid transparent;
+  top: 61px;
+  right: -13px;
+}
+
+.timeline li.timeline-inverted .timeline-panel {
+  float: right;
+}
+
+.timeline li.timeline-inverted .timeline-panel::before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
+}
+
+.timeline li.timeline-inverted .timeline-panel::after {
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -13px;
+  right: auto;
+}
+.timeline-heading {
+  width: 130px;
+  left: -30px;
+  position: relative;
+}
+.timeline-panel {
+  top: -50px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 0.5;
+  margin: 0;
+}
+.timeline-heading h3 {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+.timeline-heading {
+    width:300px;
+}
+
+.galery {
+  height: auto;
+  max-width: 100%;
+}
+.galery h2 {
+  font-size: 5rem;
+}
+.galery p {
+  font-size: 1.8rem;
+}
+.text {
+  width: 50%;
+}
+.galery2 {
+  width:700px;
+  height: 500px;
+}
+.galery1 {
+  height: 400px;
+  width: 650px;
+}
+.carousel-item img {
+  object-fit: cover;
+  height: 400px;   /* atau sesuai kebutuhan */
+}
+.btn-pink {
+  top:-50px;
+  font-size: 1.8rem;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  position: relative;
+  top: 60%;                  /* posisikan di tengah vertikal */
+  transform: translateY(-50%);
+  width: 30px;               /* kecilkan tombol */
+  height: 60px;
+  background-color: black; /* opsional: bulat transparan */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-size: 100% 100%;
+}
+
+.carousel-control-prev {
+  left: -30px;                 /* tetap di dalam kotak */
+
+}
+
+.carousel-control-next {
+  right: -30px;                /* tetap di dalam kotak */
+
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none;     /* hapus ikon default */
+}
+
+.carousel-control-prev-icon::after {
+  content: '‹';
+  font-size: 5rem;
+  color: var(--pink);             /* warna hex sesuai permintaan */
+    top:-50px;
+    position: relative;
+}
+
+.carousel-control-next-icon::after {
+  content: '›';
+  font-size: 5rem;
+  color: var(--pink);
+  position: relative;
+      top:-50px;
+}
+#konfirmasi {
+  height: auto;
+}
+#konfirmasi h2{
+  font-size: 5rem;
+}
+.form-select,
+.form-control {
+  min-width: 500px;
+}
+.form-select,
+.form-label,
+.form-control {
+  font-size: 1.8rem;
+}
+.btn-success {
+  font-size: 1.8rem;
+}
+.img2 {
+      height: 400px;
+    width: 300px;
+}
+#akhir .container {
+  height: auto;
+}
+.akhir1 {
+  width: 50%;
+}
+#akhir p {
+  font-size:1.6rem;
+}
+#akhir h3 {
+  font-size: 2.2rem;
+}
+.footer {
+  height:120px;
+}
+.footer p {
+  font-size: 1.2rem;
+}
+.footer span {
+  font-size: 1rem;
+}
+}
+
+@media (min-width:768px) {
+  
+  .cover {
+    background-size: 100% 100%;
+  }
+ .cover h4{
+   font-size: 5rem;
+ }
+  .cover h1{
+   font-size: 8rem;
+ }
+   .cover p{
+   font-size: 2.5rem;
+ }
+    .cover button{
+   font-size: 2.5rem;
+ }
+  .hero {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 100vh;
+  }
+.hero2 {
+  max-width: 100vh;
+  height: auto;
+}
+  .col-4 .kiri {
+    width: 550px;
+    height: 300px;
+  }
+    .col-4 .kanan {
+    width: 550px;
+    height: 300px;
+  }
+  .col-4 h1 {
+    font-size: 4rem;
+  }
+  .img1 {
+    height: 400px;
+    width: 300px;
+    top: -100px;
+    position: relative;
+    
+  }
+  .hero2 .nama {
+    font-size: 4rem;
+    top: -80px;
+    position: relative;
+  }
+  .hero2 p {
+    font-size: 1.8rem;
+top: -85px;
+position: relative;
+  }
+
+  .biodata {
+    height: auto;
+    max-width: 100%;
+    padding-bottom: 100px;
+  }
+  .bismillah img{
+    width: 400px;
+  }
+  .biodata1 h3 {
+    font-size: 4rem;
+  }
+  .biodata2 {
+    position: relative;
+  }
+  .biodata2 p {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 300;
+    
+  }
+
+  .biodata4 h3,
+  .biodata8 h3 {
+    font-size: 3rem;
+  }
+    .biodata4 p,
+  .biodata8 p {
+    font-size: 1.8rem;
+  }
+  .biodata7 img,
+  .biodata5 img{
+    width: 230px;
+    height: 280px;
+  }
+.biodata7,
+.biodata8 {
+  padding-top: 20px;
+}
+
+    .info .card-body {
+  font-size: 1rem;
+}
+.bunga2 {
+  top: 290px;
+}
+.bunga1 {
+  top: 290px;
+}
+.info {
+  height: auto;
+  max-width: 100%;
+}
+.info h2 {
+ font-size: 4rem; 
+}
+.info p{
+  font-size: 1.8rem;
+}
+.maps a {
+  font-size: 1.2rem;
+}
+.bunga1 {
+  top: 400px;
+}
+.bunga2 {
+  top: 400px;
+}
+.story {
+  height: auto;
+  max-width: 100%;
+}
+.story h2 {
+  font-size: 4rem;
+}
+.story p {
+  font-size: 1.8rem;
+}
+.timeline {
+  list-style: none;
+  padding: 1.4rem 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  width: 1px;
+  background-color: #ccc;
+  left: 50%;
+}
+
+.timeline li {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.timeline li::before,
+.timeline li::after {
+  content: '';
+  display: table;
+}
+
+.timeline li::after {
+  clear: both;
+}
+
+.timeline li .timeline-image {
+  width: 120px;
+  height: 120px;
+  background-color: #ccc;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 3px solid #ff6b94;
+}
+
+.timeline li .timeline-panel {
+  width: 35%;
+  float: left;
+  border: 1px solid #ccc;
+  padding: 2rem;
+  position: relative;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.timeline li .timeline-panel::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  border-top: 15px solid transparent;
+  border-left: 15px solid #ccc;
+  border-right: 0 solid #ccc;
+  border-bottom: 15px solid transparent;
+  top: 60px;
+  right: -15px;
+}
+
+.timeline li .timeline-panel::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 14px solid #fff;
+  border-right: 0 solid #fff;
+  border-bottom: 14px solid transparent;
+  top: 61px;
+  right: -13px;
+}
+
+.timeline li.timeline-inverted .timeline-panel {
+  float: right;
+}
+
+.timeline li.timeline-inverted .timeline-panel::before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
+}
+
+.timeline li.timeline-inverted .timeline-panel::after {
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -13px;
+  right: auto;
+}
+.timeline-heading {
+  width: 130px;
+  left: -30px;
+  position: relative;
+}
+.timeline-panel {
+  top: -50px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 0.5;
+  margin: 0;
+}
+.timeline-heading h3 {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+.timeline-heading {
+    width:300px;
+}
+
+.galery {
+  height: auto;
+  max-width: 100%;
+}
+.galery h2 {
+  font-size: 4rem;
+}
+.galery p {
+  font-size: 1.8rem;
+}
+.text {
+  width: 50%;
+}
+.galery2 {
+  width:700px;
+  height: 500px;
+}
+.galery1 {
+  height: 400px;
+  width: 650px;
+}
+.carousel-item img {
+  object-fit: cover;
+  height: 400px;   /* atau sesuai kebutuhan */
+}
+.btn-pink {
+  top:-50px;
+  font-size: 1.8rem;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  position: relative;
+  top: 60%;                  /* posisikan di tengah vertikal */
+  transform: translateY(-50%);
+  width: 30px;               /* kecilkan tombol */
+  height: 60px;
+  background-color: black; /* opsional: bulat transparan */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-size: 100% 100%;
+}
+
+.carousel-control-prev {
+  left: -30px;                 /* tetap di dalam kotak */
+
+}
+
+.carousel-control-next {
+  right: -30px;                /* tetap di dalam kotak */
+
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none;     /* hapus ikon default */
+}
+
+.carousel-control-prev-icon::after {
+  content: '‹';
+  font-size: 5rem;
+  color: var(--pink);             /* warna hex sesuai permintaan */
+    top:-50px;
+    position: relative;
+}
+
+.carousel-control-next-icon::after {
+  content: '›';
+  font-size: 5rem;
+  color: var(--pink);
+  position: relative;
+      top:-50px;
+}
+#konfirmasi {
+  height: auto;
+}
+#konfirmasi h2{
+  font-size: 4rem;
+}
+.form-select,
+.form-control {
+  min-width: 500px;
+}
+.form-select,
+.form-label,
+.form-control {
+  font-size: 1.8rem;
+}
+.btn-success {
+  font-size: 1.8rem;
+}
+.img2 {
+      height: 400px;
+    width: 300px;
+}
+#akhir .container {
+  height: auto;
+}
+.akhir1 {
+  width: 50%;
+}
+#akhir p {
+  font-size:1.6rem;
+}
+#akhir h3 {
+  font-size: 2.2rem;
+}
+.footer {
+  height:120px;
+}
+.footer p {
+  font-size: 1.2rem;
+}
+.footer span {
+  font-size: 1rem;
+}
+}
+@media (max-width:576px) {
+  .hero {
+    height: auto;
+  }
+  .info .card-header {
+    font-size: 0.8rem;
+  }
+  .info .card-body {
+  font-size: 0.6rem;
+}
+.info .card-footer {
+  font-size: 0.5rem;
+}
+  .bunga2 {
+    top: 470px;
+    right: -37px;
+  }
+  .info img {
+    width: 120px;
+    height: auto;
+  }
+  .bunga1 {
+    top: 250px;
+  }
+
+}
