@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta name="google" content="notranslate">
+<meta name="google" content="notranslate">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Wedding Dhea & Yasin</title>
@@ -24,7 +24,25 @@
     <h4 class="fade-item">The Wedding Of</h4>
     <h1 class="fade-item">Dhea & Yasin</h1>
     <p class="fade-item">Akan melangsungkan resepsi pernikahan:</p>
-    <p class="fade-item">26 April 2026</p>
+<div class="tanggal-acara fade-item">
+  <div class="hari">Minggu</div>
+
+  <div class="tanggal-tengah">
+    <span class="angka">26</span>
+    <span class="tahun">2026</span>
+  </div>
+
+  <div class="bulan">April</div>
+</div>
+
+<p class="jam fade-item">Pukul 08.00 - 11.00</p>
+    
+    <!-- Tambahan nama tamu -->
+    <p class="fade-item nama-tamu">
+      Kepada Yth.<br>
+      Bapak/Ibu/Saudara/i<br> <span class="nama-highlight" id="namaTamu">Tamu Undangan</span>
+    </p>
+
     <button class="fade-item button-cover" onclick="bukaUndangan()">Lihat Undangan</button>
   </div>
 </div>
@@ -47,7 +65,7 @@
   <div class="container hero">
     <div class="row">
       <div class="col d-flex justify-content-center">
-        <img src="img/Dea&Yasin.jpg" alt="Dhea&Yasin" class="img1 mx-auto">
+        <img src="img/Dea&Yasin(0).jpg" alt="Dhea&Yasin" class="img1 mx-auto">
       </div>
           </div>
             </div>
@@ -328,25 +346,30 @@ terbaik. Kini kami menanti hari istimewa kami.</p>
 <section id="konfirmasi">
   <div class="container konfirmasi">
     <h2 class="text-center mb-4" data-aos="slide-up" data-aos-delay="200" data-aos-duration="4000">Konfirmasi Kehadiran</h2>
-    <form id="formWa" class="d-flex justify-content-center align-items-center mx-auto">
+    <form id="formKonfirmasi" class="d-flex justify-content-center align-items-center mx-auto" data-aos="slide-left" data-aos-delay="200" data-aos-duration="4000">
       <div class="row mb-3">
-        <div class="col-12" data-aos="slide-left" data-aos-delay="200" data-aos-duration="4000">
-          <label for="nama" class="form-label">Nama</label>
-          <input type="text" class="form-control" id="nama" required>
+        <div class="col-12">
+          <label for="nama" class="form-label" data-aos="slide-up" data-aos-delay="200" data-aos-duration="4000">Nama</label>
+          <input type="text" class="form-control" id="nama" required data-aos="slide-right" data-aos-delay="200" data-aos-duration="4000">
         </div>
-        <div class="col-12" data-aos="slide-right" data-aos-delay="200" data-aos-duration="4000">
-          <label for="kehadiran" class="form-label">Kehadiran</label>
-          <select class="form-select" id="kehadiran" required>
+        <div class="col-12">
+          <label for="kehadiran" class="form-label" data-aos="slide-up" data-aos-delay="200" data-aos-duration="4000">Kehadiran</label>
+          <select class="form-select" id="kehadiran" required data-aos="slide-left" data-aos-delay="200" data-aos-duration="4000">
             <option value="">Pilih...</option>
             <option value="Hadir">Hadir</option>
             <option value="Tidak Hadir">Tidak Hadir</option>
           </select>
-                    <label for="komentar" class="form-label">Komentar</label>
-          <textarea class="form-control" id="komentar" rows="3"></textarea>
-          <button type="submit" class="btn btn-success">Kirim ke WhatsApp</button>
+          <label for="jumlah" class="form-label" data-aos="slide-up" data-aos-delay="200" data-aos-duration="4000">Jumlah Orang</label>
+          <input type="number" class="form-control" id="jumlah" min="1" value="1" required data-aos="slide-right" data-aos-delay="200" data-aos-duration="4000">
+          <label for="komentar" class="form-label" data-aos="slide-up" data-aos-delay="200" data-aos-duration="4000">Komentar</label>
+          <textarea class="form-control" id="komentar" rows="3" data-aos="slide-left" data-aos-delay="200" data-aos-duration="4000"></textarea>
+          <button type="submit" class="btn btn-success" data-aos="slide-up" data-aos-delay="200" data-aos-duration="4000">Kirim</button>
         </div>
       </div>
     </form>
+
+    <!-- Tempat menampilkan hasil konfirmasi -->
+    <div id="hasilKonfirmasi" class="mt-4"></div>
   </div>
 </section>
 <section id="akhir">
@@ -520,29 +543,81 @@ setTimeout(() => {
   }
 </script>
 <script>
-document.getElementById("formWa").addEventListener("submit", function(e) {
-  e.preventDefault(); // cegah reload halaman
+  const form = document.getElementById('formKonfirmasi');
+  const hasil = document.getElementById('hasilKonfirmasi');
 
-  // Ambil nilai dari input
-  const nama = document.getElementById("nama").value;
-  const kehadiran = document.getElementById("kehadiran").value;
-  const komentar = document.getElementById("komentar").value;
+  // fungsi untuk format waktu relatif
+  function waktuRelatif(date) {
+    const now = new Date();
+    const diffMs = now - date;
+    const diffSec = Math.floor(diffMs / 1000);
+    const diffMin = Math.floor(diffSec / 60);
+    const diffHour = Math.floor(diffMin / 60);
+    const diffDay = Math.floor(diffHour / 24);
 
-  // Format pesan
-  const pesan = `Konfirmasi Kehadiran:%0A
-Nama: ${nama}%0A
-Kehadiran: ${kehadiran}%0A
-Komentar: ${komentar}`;
+    if (diffSec < 60) return diffSec + " detik yang lalu";
+    if (diffMin < 60) return diffMin + " menit yang lalu";
+    if (diffHour < 24) return diffHour + " jam yang lalu";
+    return diffDay + " hari yang lalu";
+  }
 
-  // Nomor tujuan WhatsApp (ganti dengan nomor kamu)
-  const nomor = "6281316475941"; // format internasional tanpa +
+  // array untuk simpan komentar
+  const komentarList = [];
 
-  // Buat link WhatsApp
-  const url = `https://wa.me/${nomor}?text=${pesan}`;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  // Buka link
-  window.open(url, "_blank");
-});
+    const nama = document.getElementById('nama').value;
+    const kehadiran = document.getElementById('kehadiran').value;
+    const jumlah = document.getElementById('jumlah').value;
+    const komentar = document.getElementById('komentar').value;
+    const waktuSubmit = new Date();
+
+    // Buat elemen baru untuk menampilkan hasil
+    const card = document.createElement('div');
+    card.classList.add('card-konfirmasi');
+    card.innerHTML = `
+      <div class="header-komentar">
+        <strong><span class="nama-komentar">${nama}</span></strong>
+        <span class="waktu"></span>
+      </div>
+      <div><span class="nama-komentar1"><strong>Kehadiran:</strong> ${kehadiran}</span></div>
+      <div><span class="nama-komentar1"><strong>Jumlah Orang:</strong> ${jumlah}</span></div>
+      <div><span class="nama-komentar1"><strong>Komentar:</strong> ${komentar}</span></div>
+    `;
+
+    hasil.prepend(card);
+
+    // simpan data komentar
+    komentarList.push({element: card.querySelector('.waktu'), waktu: waktuSubmit});
+
+    form.reset();
+  });
+
+  // update waktu setiap 30 detik
+  setInterval(() => {
+    komentarList.forEach(item => {
+      item.element.textContent = waktuRelatif(item.waktu);
+    });
+  }, 30000);
+
+</script>
+<script>
+// Fungsi untuk mengganti nama tamu secara manual
+function setNamaTamu(nama) {
+  document.getElementById('namaTamu').textContent = nama;
+}
+
+// Contoh pemanggilan manual
+setNamaTamu("Dery Kusuma Putra");
+
+// --- Jika ingin otomatis dari URL ---
+// Misalnya undangan dibuka dengan link: undangan.html?to=Gilang%20Pamungkas
+const params = new URLSearchParams(window.location.search);
+const namaURL = params.get("to");
+if (namaURL) {
+  setNamaTamu(namaURL.replace(/_/g, " "));
+}
 </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
         <script>
