@@ -591,7 +591,22 @@ setTimeout(() => {
 
     // simpan data komentar
     komentarList.push({element: card.querySelector('.waktu'), waktu: waktuSubmit});
+// kirim data ke Google Apps Script
+    const data = new FormData(form);
+    const action = e.target.action;
 
+    fetch(action, {
+      method: 'POST',
+      body: data,
+    })
+    .then(response => response.text())
+    .then(text => {
+      console.log('Server response:', text);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+    
     form.reset();
   });
 
