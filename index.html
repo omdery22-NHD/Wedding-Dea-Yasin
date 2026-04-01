@@ -577,6 +577,9 @@ setTimeout(() => {
   function renderKomentar(item) {
     const card = document.createElement('div');
     card.classList.add('card-konfirmasi');
+    card.setAttribute('data-aos', 'fade-up');       // animasi muncul dari bawah
+  card.setAttribute('data-aos-delay', '200');    // jeda 200ms
+  card.setAttribute('data-aos-duration', '1000'); // durasi 1 detik
     card.innerHTML = `
       <div class="header-komentar">
         <strong><span class="nama-komentar">${item.nama}</span></strong>
