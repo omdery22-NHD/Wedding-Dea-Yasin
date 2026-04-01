@@ -345,26 +345,36 @@ terbaik. Kini kami menanti hari istimewa kami.</p>
 </section>
 <section id="konfirmasi">
   <div class="container konfirmasi">
-    <h2 class="text-center mb-4" data-aos="slide-up" data-aos-delay="200" data-aos-duration="4000">Konfirmasi Kehadiran</h2>
-    <form id="formKonfirmasi" class="d-flex justify-content-center align-items-center mx-auto" data-aos="slide-left" data-aos-delay="200" data-aos-duration="4000" action="https://script.google.com/macros/s/AKfycbxdxSPFXUd2fatMqgjFsNxBHRFq5jB1uLvq6xW04BV91y4nPnD2uNCUvVu_iBxizc2-kA/exec"
+    <h2 class="text-center mb-4" data-aos="slide-up" data-aos-delay="200" data-aos-duration="4000">
+      Konfirmasi Kehadiran
+    </h2>
+    <form id="formKonfirmasi" 
+          class="d-flex justify-content-center align-items-center mx-auto" 
+          data-aos="slide-left" data-aos-delay="200" data-aos-duration="4000" 
+          action="https://script.google.com/macros/s/AKfycbxdxSPFXUd2fatMqgjFsNxBHRFq5jB1uLvq6xW04BV91y4nPnD2uNCUvVu_iBxizc2-kA/exec"
           method="POST">
+
       <div class="row mb-3">
         <div class="col-12">
-          <label for="nama" class="form-label" data-aos="slide-up" data-aos-delay="200" data-aos-duration="4000">Nama</label>
-          <input type="text" class="form-control" id="nama" required data-aos="slide-right" data-aos-delay="200" data-aos-duration="4000">
+          <label for="nama" class="form-label">Nama</label>
+          <input type="text" class="form-control" id="nama" name="nama" required>
         </div>
+
         <div class="col-12">
-          <label for="kehadiran" class="form-label" data-aos="slide-up" data-aos-delay="200" data-aos-duration="4000">Kehadiran</label>
-          <select class="form-select" id="kehadiran" required data-aos="slide-left" data-aos-delay="200" data-aos-duration="4000">
+          <label for="kehadiran" class="form-label">Kehadiran</label>
+          <select class="form-select" id="kehadiran" name="kehadiran" required>
             <option value="">Pilih...</option>
             <option value="Hadir">Hadir</option>
             <option value="Tidak Hadir">Tidak Hadir</option>
           </select>
-          <label for="jumlah" class="form-label" data-aos="slide-up" data-aos-delay="200" data-aos-duration="4000">Jumlah Orang</label>
-          <input type="number" class="form-control" id="jumlah" min="1" value="1" required data-aos="slide-right" data-aos-delay="200" data-aos-duration="4000">
-          <label for="komentar" class="form-label" data-aos="slide-up" data-aos-delay="200" data-aos-duration="4000">Komentar</label>
-          <textarea class="form-control" id="komentar" rows="3" data-aos="slide-left" data-aos-delay="200" data-aos-duration="4000"></textarea>
-          <button type="submit" class="btn btn-success" data-aos="slide-up" data-aos-delay="200" data-aos-duration="4000">Kirim</button>
+
+          <label for="jumlah" class="form-label">Jumlah Orang</label>
+          <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" value="1" required>
+
+          <label for="komentar" class="form-label">Komentar</label>
+          <textarea class="form-control" id="komentar" name="komentar" rows="3"></textarea>
+
+          <button type="submit" class="btn btn-success">Kirim</button>
         </div>
       </div>
     </form>
