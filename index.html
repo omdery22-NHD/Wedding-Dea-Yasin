@@ -351,7 +351,7 @@ terbaik. Kini kami menanti hari istimewa kami.</p>
     <form id="formKonfirmasi" 
           class="d-flex justify-content-center align-items-center mx-auto" 
           data-aos="slide-left" data-aos-delay="200" data-aos-duration="4000" 
-          action="https://script.google.com/macros/s/AKfycbxdxSPFXUd2fatMqgjFsNxBHRFq5jB1uLvq6xW04BV91y4nPnD2uNCUvVu_iBxizc2-kA/exec"
+          action="https://script.google.com/macros/s/AKfycbyOpHR9pu_YgtgP2ohxdxwHZA55eV-KxqMC00EdDr5Fh0UjUkrV594eD6U0LSJDYWMXnw/exec"
           method="POST">
 
       <div class="row mb-3">
@@ -556,11 +556,12 @@ setTimeout(() => {
 <script>
   const form = document.getElementById('formKonfirmasi');
   const hasil = document.getElementById('hasilKonfirmasi');
+  const urlWebApp = "https://script.google.com/macros/s/AKfycbyOpHR9pu_YgtgP2ohxdxwHZA55eV-KxqMC00EdDr5Fh0UjUkrV594eD6U0LSJDYWMXnw/exec";
 
   // fungsi untuk format waktu relatif
   function waktuRelatif(date) {
     const now = new Date();
-    const diffMs = now - date;
+    const diffMs = now - new Date(date);
     const diffSec = Math.floor(diffMs / 1000);
     const diffMin = Math.floor(diffSec / 60);
     const diffHour = Math.floor(diffMin / 60);
@@ -572,37 +573,40 @@ setTimeout(() => {
     return diffDay + " hari yang lalu";
   }
 
-  // array untuk simpan komentar
-  const komentarList = [];
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const nama = document.getElementById('nama').value;
-    const kehadiran = document.getElementById('kehadiran').value;
-    const jumlah = document.getElementById('jumlah').value;
-    const komentar = document.getElementById('komentar').value;
-    const waktuSubmit = new Date();
-
-    // Buat elemen baru untuk menampilkan hasil
+  // fungsi untuk render komentar
+  function renderKomentar(item) {
     const card = document.createElement('div');
     card.classList.add('card-konfirmasi');
     card.innerHTML = `
       <div class="header-komentar">
-        <strong><span class="nama-komentar">${nama}</span></strong>
-        <span class="waktu"></span>
+        <strong><span class="nama-komentar">${item.nama}</span></strong>
+        <span class="waktu">${waktuRelatif(item.waktu)}</span>
       </div>
-      <div><span class="nama-komentar1"><strong>Kehadiran:</strong> ${kehadiran}</span></div>
-      <div><span class="nama-komentar1"><strong>Jumlah Orang:</strong> ${jumlah}</span></div>
-      <div><span class="nama-komentar1"><strong>Komentar:</strong> ${komentar}</span></div>
+      <div><strong>Kehadiran:</strong> ${item.kehadiran}</div>
+      <div><strong>Jumlah Orang:</strong> ${item.jumlah}</div>
+      <div><strong>Komentar:</strong> ${item.komentar}</div>
     `;
-
     hasil.prepend(card);
+  }
 
-    // simpan data komentar
-    komentarList.push({element: card.querySelector('.waktu'), waktu: waktuSubmit});
-    const url = "https://script.google.com/macros/s/AKfycbxdxSPFXUd2fatMqgjFsNxBHRFq5jB1uLvq6xW04BV91y4nPnD2uNCUvVu_iBxizc2-kA/exec";
-// kirim data ke Google Apps Script
+  // ambil data lama dari Google Sheet via doGet
+  function loadKomentar() {
+    fetch(urlWebApp)
+      .then(response => response.json())
+      .then(data => {
+        hasil.innerHTML = ""; // kosongkan dulu
+        data.reverse().forEach(item => renderKomentar(item));
+      })
+      .catch(error => console.error('Error:', error));
+  }
+
+  // jalankan saat halaman pertama kali dibuka
+  loadKomentar();
+
+  // submit form
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
     const data = new FormData(form);
     const action = e.target.action;
 
@@ -613,21 +617,15 @@ setTimeout(() => {
     .then(response => response.text())
     .then(text => {
       console.log('Server response:', text);
+      // setelah sukses simpan, reload komentar dari Sheet
+      loadKomentar();
     })
     .catch(error => {
       console.error('Error:', error);
     });
-    
+
     form.reset();
   });
-
-  // update waktu setiap 30 detik
-  setInterval(() => {
-    komentarList.forEach(item => {
-      item.element.textContent = waktuRelatif(item.waktu);
-    });
-  }, 30000);
-
 </script>
 <script>
 // Fungsi untuk mengganti nama tamu secara manual
