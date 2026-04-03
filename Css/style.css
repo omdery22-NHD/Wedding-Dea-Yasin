@@ -160,6 +160,9 @@ body.lock-scroll {
   color: #555;
           text-shadow: 1px 1px 1px white;
 }
+.button-cover {
+  padding; 5px;
+}
 .hero-visible {
   background-color: white;
   height: auto;
