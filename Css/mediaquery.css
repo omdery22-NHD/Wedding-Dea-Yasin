@@ -42,8 +42,8 @@
   content: "";
   position: absolute;
   top: 50%;
-  width: 8px;
-  height: 50px;
+  width: 2px;
+  height: 100px;
   background: #2f3e46;
   transform: translateY(-50%);
 }
@@ -512,8 +512,8 @@ position: relative;
   content: "";
   position: absolute;
   top: 50%;
-  width: 8px;
-  height: 50px;
+  width: 2px;
+  height: 100px;
   background: #2f3e46;
   transform: translateY(-50%);
 }
