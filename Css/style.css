@@ -35,12 +35,13 @@ body.lock-scroll {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: 10px;
   margin: 20px 0;
   font-family: 'Playfair Display', serif;
 }
 
 .hari, .bulan {
+  flex: 1;
   font-size: 20px;
   color: #2f3e46;
   text-shadow: 1px 1px 1px white;
