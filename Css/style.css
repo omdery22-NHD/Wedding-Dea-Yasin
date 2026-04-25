@@ -5,9 +5,10 @@
 body, html{
   top: 0;
   background-image: url('img/bg1.jpeg');
-  margin: 0;
+  margin: 0 auto;
   font-family: 'work sans',Sans-Serif;
   overflow-x: hidden;
+  max-width: 756px;
 }
 body.lock-scroll {
   overflow: hidden; /* mencegah scroll saat cover aktif */
@@ -15,8 +16,8 @@ body.lock-scroll {
 
 .cover {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
+  top: 0;
+  max-width: 756px;
   height: 100vh;
   background: url('../img/Dea.jpg') center/cover no-repeat ;
   display: flex;
@@ -25,6 +26,7 @@ body.lock-scroll {
   transition: transform 2s ease-in-out, opacity 2s ease;
   opacity: 1;
   z-index: 999999;
+  margin: 0 auto;
 }
 
 .cover.naik {
