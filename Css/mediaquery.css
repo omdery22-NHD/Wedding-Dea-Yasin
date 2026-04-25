@@ -1,1 +1,5 @@
-
+@media (min-width: 756px){
+.cover {
+max-width: 756px;
+}
+}
