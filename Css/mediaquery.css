@@ -1,3 +1,9 @@
+@media (min-width:1024px){
+  .cover{
+height: auto;
+    min-height: 100vh;
+  }
+}
 @media (min-width:576px){
   .tanggal-acara {
   display: flex;
