@@ -1,4 +1,8 @@
 @media (min-width:576px){
+  .cover {
+overflow-y: auto;
+    height: auto;
+  }
   .tanggal-acara {
   display: flex;
   justify-content: center;
