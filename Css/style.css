@@ -9,6 +9,7 @@ body, html{
   font-family: 'work sans',Sans-Serif;
   overflow-x: hidden;
   max-width: 756px;
+  overflow-y: auto;
 }
 body.lock-scroll {
   overflow: hidden; /* mencegah scroll saat cover aktif */
@@ -18,7 +19,7 @@ body.lock-scroll {
   position: fixed;
   top: 0;
   max-width: 756px;
-  height: auto;
+  height: 100vh;
   background: url('../img/Dea.jpg') center/cover no-repeat ;
   display: flex;
   align-items: center;
