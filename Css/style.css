@@ -18,7 +18,7 @@ body.lock-scroll {
   position: fixed;
   top: 0;
   max-width: 756px;
-  height: 100vh;
+  height: auto;
   background: url('../img/Dea.jpg') center/cover no-repeat ;
   display: flex;
   align-items: center;
