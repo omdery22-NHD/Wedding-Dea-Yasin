@@ -1,8 +1,5 @@
 @media (min-width: 756px){
-  .body {
-    max-width:756px;
-  }
 .cover {
-max-width: 756px;
+max-width: 800px;
 }
 }
