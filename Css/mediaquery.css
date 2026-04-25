@@ -2,4 +2,7 @@
   .cover {
     width : 576px;
   }
+  .hidden {
+    width: 576px;
+  }
 }
